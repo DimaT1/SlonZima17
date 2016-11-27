@@ -42,5 +42,7 @@ else:
     answ = 'YES'
   if count_x == count_o + 1:
     answ = 'YES'
+if win_x and win_o:
+  answ = 'NO'
 
 print(answ)    
