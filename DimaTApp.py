@@ -5,7 +5,6 @@
 # pip3 install vk
 
 import vk
-import time
 
 def vk_login():
   s_id = '5749646'
@@ -29,15 +28,16 @@ def vk_login():
   return api
 
 
+def mykey(a):
+  if 'schools' in a:
+      if a['schools'] != []:
+        return a['schools'][0]['name']
+  return ''
 
 api = vk_login()
 
-
-#s = api.users.get(user_ids=1)[0]
-#print(s['first_name'])
-
-#print(api.friends.get(user_ids = 'landspeeder'))
 s = api.friends.get(fields = 'schools')
+s = sorted(s, key = mykey)
 
 for i in s:
   print(i['first_name'], ' ', i['last_name'], end = '')
@@ -45,15 +45,3 @@ for i in s:
     for j in i['schools']:
       print(' ', j['name'], end = '')
   print()
-    
-  
-
-'''
-mas = api.friends.get(user_ids = 'landspeeder')
-for i in mas:
-  print(api.users.get(user_ids=i))
-  time.sleep(0.4)
-  print(i)
-  
-'''
-#print(api.users.get(user_ids=mas[1]))
