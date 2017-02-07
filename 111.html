@@ -1,0 +1,360 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Два.ч — Свободное общение</title>
+	<link rel="stylesheet" type="text/css" href="/newtest/resources/css/reset.css?1">
+	<link rel="stylesheet" type="text/css" href="/newtest/resources/css/hmain4.css?2">
+	<link rel="stylesheet" type="text/css" href="/makaba/templates/css/makaba.css">
+	<link rel="stylesheet" type="text/css" href="/makaba/templates/css/indexboards.css">
+	<link href="/makaba/templates/css/topthreads.css" type="text/css" rel="stylesheet">
+	<link href="/makaba/templates/css/font-awesome.min.css" title="makaba" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/jqcloud.css">
+	<script type="text/javascript" src="/makaba/templates/js/jquery-3.1.0.min.js"></script>
+	<script src="/js/jqcloud-1.0.3.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/newtest/resources/js/hmain.js"></script>
+	<script type="text/javascript" src="/makaba/templates/js/swag.js"></script>
+	<script src="/makaba/templates/js/boards.js?11"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	  <script>
+	  $( function() {
+		$( "#tabbed" ).tabs({ 
+			active: Store.get('other.index.active',0),
+			activate: function(event, ui){
+				console.log(ui.newTab.index());
+				Store.set('other.index.active', ui.newTab.index());
+			},
+		});
+	  } );
+	  </script>
+	  <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-53637455-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="/makaba/templates/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+	<body>
+		<div id="settings-window" style="display:none;" class="qr qr-settings">
+			<div id="settings-window-header" class="qr-header">
+				<span id="settings-title">Настройки</span>
+			</div>
+			<div id="settings-body">
+			</div>
+			<div id="settings-footer" class="setting-buttons qr-footer">
+				<hr>
+				<input type="button" id="settings-btn-save" value="Сохранить">
+				<input type="button" id="settings-btn-export" value="Экспорт">
+				<input type="button" id="settings-btn-import" value="Импорт">
+				<input type="button" id="settings-btn-close" value="Отмена">
+			</div>
+		</div>
+		
+		<div id="setting-editor-window" style="display:none;" class="qr qr-settings">
+			<div id="setting-editor-window-header" class="qr-header">
+				<span id="setting-editor-title"></span>
+			</div>
+			<div id="setting-editor-body">
+			</div>
+			<div id="setting-editor-footer" class="setting-buttons qr-footer">
+				<hr>
+				<input type="button" id="setting-editor-btn-save" value="Сохранить">
+				<input type="button" id="setting-editor-btn-export" value="Экспорт">
+				<input type="button" id="setting-editor-btn-import" value="Импорт">
+				<input type="button" id="setting-editor-btn-close" value="Отмена">
+			</div>
+		</div>
+		
+		<div class="wraper mainpage">
+			<header class="header">
+				<div class="adminbar"> 
+					<div class="menu">
+	<ul class="menu-links-mob" style="float:left">
+
+		<li><a id ="settings" href="#">Настройка</a></li>
+		<li class="desktop"><a href="/m.html" target="_blank">Mobile</a></li>
+		<li class="desktop"><a href="/contacts.html">Контакты</a></li>
+		<li class="desktop"><a id="nsfw" href="#">NSFW</a></li>
+
+		<li class="desktop"><a href="/donate.html">Пожертвования</a></li>
+		<li class="desktop"><a href="/market.html">Купить пасскод</a></li>
+		<li class="desktop"><a href="/makaba/makaba.fcgi?task=images_feed">Pics</a></li>
+		<li class="desktop"><a href="/makaba/makaba.fcgi?task=images_adult_feed">Adult Pics</a></li>
+		<li class="desktop"><a href="/abu/res/42375.html">API</a></li>
+		<li class="desktop"><a href="//arch/">Архив</a></li>
+		<li class="desktop"><a href="/boardrequest.html">Реквест доски</a></li>
+		<li class="desktop"><a href="/makaba/stickers/">Каталог стикеров</a></li>
+		<li class="desktop"><a href="/ads.html">Реклама</a></li>
+		<li>
+			
+			<select id="SwitchStyles" class="desktop style-switcher mselect">
+					<option selected value="makaba">Makaba</option>
+					<option value="futaba">Futaba</option>
+					<option value="burichan">Burichan</option>
+					<option value="muon">Muon</option>
+					<option value="neutron">Neutron</option>
+					<option value="gurochan">Gurochan</option>
+					<option value="konsole">Консолечка</option>
+					<option value="game">Game</option>
+			</select>
+			
+		</li>
+		
+	</ul>
+	
+	<div id="boardNavMobile" class="board-list-mob mobile">
+			Доски 
+			<select id="LakeNavForm">
+				<option selected>Навигация</option>
+				<optgroup label="Тематика">
+					<option value="/au/">/au/</option>
+					<option value="/bi/">/bi/</option>
+					<option value="/biz/">/biz/</option>
+					<option value="/bo/">/bo/</option>
+					<option value="/c/">/c/</option>
+					<option value="/em/">/em/</option>
+					
+					<option value="/fa/">/fa/</option>
+					<option value="/fiz/">/fiz/</option>
+					<option value="/fl/">/fl/</option>
+					<option value="/ftb/">/ftb/</option>
+					<option value="/gd/">/gd/</option>
+					<option value="/hi/">/hi/</option>
+					<option value="/hw/">/hw/</option>
+					<option value="/me/">/me/</option>
+					
+					<option value="/mlp/">/mlp/</option>
+					<option value="/mo/">/mo/</option>
+					<option value="/mu/">/mu/</option>
+					<option value="/ne/">/ne/</option>
+					
+					<option value="/po/">/po/</option>
+					<option value="/pr/">/pr/</option>
+					<option value="/psy/">/psy/</option>
+					<option value="/ra/">/ra/</option>
+					<option value="/re/">/re/</option>
+					<option value="/s/">/s/</option>
+					
+					<option value="/sci/">/sci/</option>
+					<option value="/sn/">/sn/</option>
+					<option value="/sp/">/sp/</option>
+					<option value="/spc/">/spc/</option>
+					<option value="/t/">/t/</option>
+					
+					<option value="/tv/">/tv/</option>
+					<option value="/un/">/un/</option>
+					
+					<option value="/w/">/w/</option>
+					<option value="/wh/">/wh/</option>
+					<option value="/wm/">/wm/</option>
+					<option value="/wp/">/wp/</option>
+					
+				</optgroup>
+				<optgroup label="Творчество">
+					<option value="/di/">/di/</option>
+					
+					<option value="/diy/">/diy/</option>
+					
+					
+					<option value="/pa/">/pa/</option>
+					<option value="/p/">/p/</option>
+					
+					<option value="/trv/">/trv/</option>
+				</optgroup>
+				<optgroup label="Игры">
+					
+					<option value="/cg/">/cg/</option>
+					<option value="/gb/">/gb/</option>
+
+					<option value="/tes/">/tes/</option>
+					<option value="/v/">/v/</option>
+					<option value="/vg/">/vg/</option>
+					
+				</optgroup>
+				<optgroup label="Японская культура">
+					<option value="/a/">/a/</option>
+					
+					<option value="/fd/">/fd/</option>
+					
+					<option value="/ma/">/ma/</option>
+					
+					<option value="/vn/">/vn/</option>
+				</optgroup>
+				<optgroup label="Разное">
+					<option value="/d/">/d/</option>
+					<option value="/b/">/b/</option>
+					<option value="/fag/">/fag/</option>
+					<option value="/soc/">/soc/</option>
+					<option value="/r/">/r/</option>
+				
+					<option value="/abu/">/abu/</option>
+					
+				</optgroup>
+				<optgroup label="Взрослым">
+					<option value="/fg/">/fg/</option>
+					<option value="/fur/">/fur/</option>
+					<option value="/g/">/g/</option>
+					<option value="/ga/">/ga/</option>
+					<option value="/vape/">/vape/</option>
+					<option value="/h/">/h/</option>
+					<option value="/ho/">/ho/</option>
+					<option value="/hc/">/hc/</option>
+					<option value="/e/">/e/</option>
+					<option value="/fet/">/fet/</option>
+					<option value="/sex/">/sex/</option>
+				</optgroup>
+			
+			</select>
+	</div>
+</div>
+<hr>
+
+
+				</div>
+				<a class="mainlogo" href="/">Два.ч</a>
+				<span class="welcomefriend">Добро пожаловать. Снова.</span>
+			</header>
+			<section class="content">
+				<article class="postscontainer hdescription">
+					Два.ч - это система форумов, где можно общаться быстро и свободно, где любая точка зрения имеет право на жизнь. Здесь нет регистрации и подписываться не нужно, хотя это не избавляет вас от необходимости соблюдать правила. Все форумы (кроме <a href="/b/">/Б/</a>реда), а их список находится снизу, имеют собственную чётко ограниченную тематику. Словом, всё, что не запрещено правилами отдельно взятого форума и относится к его тематике, на этом форуме разрешено. <br><a style="float:right;" href="/m.html">Скачать мобильные приложения</a></a>
+				</article>
+				<article class="postscontainer hdescription hboardlist">
+					<div class="column">
+						<ul>
+							<li class="boardsubj">Тематика</li>
+							<li><a href="/au/">Автомобили</a></li>
+							<li><a href="/bi/">Велосипеды</a></li>
+							<li><a href="/biz/">Бизнес</a> </li>
+							<li><a href="/c/">Комиксы</a></li>
+							<li><a href="/em/">Другие страны</a> </li>
+							<li><a href="/fa/">Мода и стиль</a></li>
+							<li><a href="/fiz/">Физкультура</a></li>
+							<li><a href="/fl/">Ин.языки</a></li>
+							<li><a href="/ftb/">Футбол</a></li>
+							<li><a href="/hi/">История</a></li>
+							<li><a href="/me/">Медицина</a></li>
+							<li><a title="магия" href="/mg/">Магия</a></li>
+							<li><a href="/mlp/">Пони</a></li>
+							<li><a href="/mo/">Мотоциклы</a></li>
+							<li><a href="/mov/">Фильмы</a></li>
+							<li><a href="/mu/">Музыка</a></li>
+							<li><a href="/ne/">Животные</a></li>
+							<li><a href="/psy/">Психология</a></li>
+							<li><a href="/re/">Религия/Философия</a></li>
+							<li><a href="/sci/">Наука</a></li>
+							<li><a href="/sf/">Научная фантастика</a></li>
+							
+						</ul>
+					</div>
+					<div class="column">
+						<ul>
+							<li><a href="/sn/">Паранормальное</a></li>
+							<li><a href="/sp/">Спорт</a></li>
+							<li><a href="/spc/">Космос</a></li>
+							<li><a href="/tv/">Сериалы</a></li>
+							<li><a href="/un/">Образование</a></li>
+							<li><a href="/w/">Оружие</a></li>
+							<li><a href="/wh/">Warhammer</a></li>
+							<li><a href="/wm/">Военная техника</a></li>
+							<li><a href="/wp/">Обои и хайрез</a></li>
+							<li><a href="/zog/">Теории заговора</a></li>
+							<br>
+							<li class="boardsubj">Творчество</li>
+							<li><a href="/de/">Дизайн</a></li>
+							<li><a href="/di/">Столовая</a></li>
+							<li><a href="/diy/">Хобби</a></li>
+							<li><a href="/mus/">Музыканты</a></li>
+							<li><a href="/pa/">Живопись</a></li>
+							<li><a href="/p/">Фотография</a></li>
+							<li><a href="/wrk/">Работа</a></li>
+							
+							<br>
+							<li class="boardsubj">Политика и новости</li>
+							<li><a href="/po/">Политика</a></li>
+							<li><a href="/news/">Новости</a></li>
+							<li><a href="/int/"><font color="red"><b>International</b></font></a></li>
+							<br>
+						</ul>
+					</div>
+					<div class="column">
+						<ul>
+							
+							<li class="boardsubj">Техника и софт</li>
+							<li><a href="/gd/">Gamedev</a></li>
+							<li><a href="/hw/">Комп. железо</a></li>
+							<li><a href="/mobi/">Моб. устройства</a></li>
+							<li><a href="/pr/">Программирование</a></li>
+							<li><a href="/ra/">Радиотехника</a></li>
+							<li><a href="/s/">Программы</a></li>
+							<li><a href="/t/">Техника</a></li>
+							
+							<br>
+							<li class="boardsubj">Игры</li>
+							<li><a href="/bg/">Настольные игры</a></li>
+							<li><a href="/cg/">Консоли</a></li>
+							<li><a href="/ruvn/"><font color="red"><b>Российские виз.новеллы</b></font></a></li>
+							<li><a href="/tes/">The Elder Scrolls</a></li>
+							<li><a href="/v/">Video Games</a></li>
+							<li><a href="/vg/">Video Games General</a></li>
+							<li><a href="/wr/">Текстовые РПГ</a></li>
+						</ul>
+					</div>
+					<div class="column">
+						<ul>
+							
+							
+							<li class="boardsubj">Японская культура</li>
+							<li><a href="/a/">Аниме</a></li>
+							<li><a href="/fd/">Фэндом</a></li>
+							<li><a href="/ja/">Японская культура</a></li>
+							<li><a href="/ma/">Манга</a></li>
+							<li><a href="/vn/">Визуальные новеллы</a></li>
+							<br>
+							<li class="boardsubj">Разное  <span style="font-size:10px; color:red;"> (18+)</span></li>
+							<li><a href="/d/">Дискуссии о Два.ч</a></li>
+							<li><a href="/b/">Бред</a></li>
+							<li><a href="/soc/">Общение</a></li>
+							<li><a href="/media/">Анимация</a></li>
+							<li><a href="/r/">Реквесты</a></li>
+							<li><a href="/abu/">Абу</a></li>
+							<li><a href="/rf/">Убежище</a></li>
+							<li><a href="/o/"><font color="red"><b>Рисовач</b></font></a></li>
+							<br>
+						</ul>
+					</div>
+					<div class="column">
+						<ul>
+							
+							<li class="boardsubj">Взрослым <span style="font-size:10px; color:red;"> (18+)</span></li>
+							<li><a href="/fg/">Трапы</a></li>
+							<li><a href="/fur/">Фурри</a></li>
+							<li><a href="/gg/">Красивые девушки</a></li>
+							<li><a href="/ga/">Геи</a></li>
+							<li><a href="/hc/">Hardcore</a></li>
+							<li><a href="/e/">Extreme pron</a></li>
+							<li><a href="/fet/">Фетиш</a></li>
+							<li><a href="/sex/">Секс и отношения</a></li>
+							<li><a href="/fag/">Фагготрия</a></li>
+							
+							<li class="otherboards"><a href="/userboards.html">Прочие доски</a></li>
+						</ul>
+					</div>
+				</article>
+				<article class="postscontainer  hdescription hnews" >
+					<header class="news-title">Новости
+						<span class="pager">
+							<a href="#" onclick="cloudBoard.getnews(this);return false;" data-page="down">←</a>
+							 <span id="cur_page">0</span> 
+							<a href="#" onclick="cloudBoard.getnews(this);return false;" data-page="up">→</a>
+						</span>
+					</header>
+					<div id="news"></div>
+				</article>
+				<article class="postscontainer  hdescription-stats">На данный момент открыто <strong>156</strong> досок. Общая скорость постинга на имиджборде <strong>9,673
